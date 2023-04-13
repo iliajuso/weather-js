@@ -1,0 +1,117 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #7749f8;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 40px 250px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 344px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 34px;
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+
+.with {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+
+h2 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 87px;
+  color: #FFFFFF;
+}
+
+.main__info__windy {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+a {
+  font-family: Muli;
+  font-size: 17px;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+
+input {
+  background-color: #7749f8;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgba(255, 255, 255, 0.7490196078);
+  border-bottom: 2px solid;
+  background: rgba(255, 255, 255, 0.7490196078);
+}
+
+.main__input {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__find {
+  background-color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #4C01E0;
+  height: 48px;
+  width: 140px;
+  border-radius: 8px;
+  margin-top: 41px;
+  background-position: center;
+  border: none;
+}
+
+.main__eror {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.main__eror p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #FFFFFF;
+}
+.main__eror a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.7490196078);
+  text-decoration: none;
+}
+
+.main__try {
+  height: 48px;
+  width: 140px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #4C01E0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  margin-top: 63px;
+  border: none;
+}/*# sourceMappingURL=style.css.map */
