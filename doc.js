@@ -9,9 +9,9 @@ const error = function (e) {
 
 navigator.geolocation.getCurrentPosition(success, error);
  
- async function getWeather(){
+ async function getWeather(lat, lon){
     try {
-      let url = `https://api.openweathermap.org/data/2.5/weather?lat=41.716667&lon=44.783333&units=metric&appid=1cd8c91ab257624a491a4e5e9eef35e0`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=1cd8c91ab257624a491a4e5e9eef35e0`;
      let weather = await fetch(url);
      let data = await weather.json()
       console.log(data)
