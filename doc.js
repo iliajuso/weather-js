@@ -1,11 +1,10 @@
-const success = function (position) {
-  const lat = position.coords.latitude;
-  const lon = position.coords.longitude;
-  getWeatherLocation(lat, lon);
+const success = function (data) {
+  console.log(data.coords.latitude)
+  console.log(data.coords.longitude)
+  getWeather(lat, lon)
 }
 const error = function (e) {
   console.error("ERROR", e)
-  getWeatherLocation();
 }
 
 navigator.geolocation.getCurrentPosition(success, error);
@@ -34,33 +33,16 @@ getWeather()
       console.log(error)
     }
   }
-  // async function getWeatherLocation(){
-  //   try{
-  //     const weatherData= await getWeather(lat, lon)
-  //     createWeather(weatherData)
-  //   }catch (error){
-  //     console.log(error)
-  //     const location = await getCity(await getIp ())
-  //     console.log(location)
-  //     createWeather(location)
-  //  }
-  // }
-  async function getWeatherLocation(lat, lon) {
-    try {
-      if (lat && lon) {
-        const weatherData = await getWeather(lat, lon);
-        createWeather(weatherData);
-      } else {
-        const location = await getCity(await getIp());
-        console.log(location);
-        createWeather(location);
-      }
-    } catch (error) {
-      console.log(error);
-      const location = await getCity(await getIp());
-      console.log(location);
-      createWeather(location);
-    }
+  async function getWeatherLocation(){
+    try{
+      const weatherData= await getWeather()
+      createWeather(weatherData)
+    }catch (error){
+      console.log(error)
+      const location = await getCity(await getIp ())
+      console.log(location)
+      createWeather(location)
+   }
   }
 
 async function getCity(city) {
@@ -117,6 +99,9 @@ async function getCity(city) {
    });
 
  function createWeather(obj){
+   let imgSrc = `https://openweathermap.org/img/wn/${obj.weather[0].icon}@2x.png`
+    const img = document.querySelector("img")
+    img.setAttribute("src", imgSrc)
    let deg = document.querySelector(".main__info__deg")
     deg.innerText = obj.main.temp.toFixed() + "℃";
     let city = document.querySelector(".main__info__windy")
