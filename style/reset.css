@@ -44,9 +44,9 @@ ol {
 }
 
 
-a:not([class]) {
+/* a:not([class]) {
   text-decoration-skip-ink: auto;
-}
+} */
 
 
 img {
