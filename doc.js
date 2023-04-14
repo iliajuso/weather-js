@@ -1,10 +1,11 @@
-const success = function (data) {
-  console.log(data.coords.latitude)
-  console.log(data.coords.longitude)
-
+const success = function (position) {
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  getWeatherLocation(lat, lon);
 }
 const error = function (e) {
   console.error("ERROR", e)
+  getWeatherLocation();
 }
 
 navigator.geolocation.getCurrentPosition(success, error);
@@ -33,16 +34,33 @@ getWeather()
       console.log(error)
     }
   }
-  async function getWeatherLocation(){
-    try{
-      const weatherData= await getWeather()
-      createWeather(weatherData)
-    }catch (error){
-      console.log(error)
-      const location = await getCity(await getIp ())
-      console.log(location)
-      createWeather(location)
-   }
+  // async function getWeatherLocation(){
+  //   try{
+  //     const weatherData= await getWeather(lat, lon)
+  //     createWeather(weatherData)
+  //   }catch (error){
+  //     console.log(error)
+  //     const location = await getCity(await getIp ())
+  //     console.log(location)
+  //     createWeather(location)
+  //  }
+  // }
+  async function getWeatherLocation(lat, lon) {
+    try {
+      if (lat && lon) {
+        const weatherData = await getWeather(lat, lon);
+        createWeather(weatherData);
+      } else {
+        const location = await getCity(await getIp());
+        console.log(location);
+        createWeather(location);
+      }
+    } catch (error) {
+      console.log(error);
+      const location = await getCity(await getIp());
+      console.log(location);
+      createWeather(location);
+    }
   }
 
 async function getCity(city) {
